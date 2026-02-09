@@ -1,5 +1,43 @@
 [gd_scene format=3 uid="uid://dd2286kkfqu7h"]
 
+[ext_resource type="Texture2D" uid="uid://c1rc34uspf1s5" path="res://assets/sprites/camper1.png" id="1_glv2v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu6xs"]
+atlas = ExtResource("1_glv2v")
+region = Rect2(0, 0, 325, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0du0"]
+atlas = ExtResource("1_glv2v")
+region = Rect2(0, 144, 325, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm0pq"]
+atlas = ExtResource("1_glv2v")
+region = Rect2(0, 288, 325, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fos0i"]
+atlas = ExtResource("1_glv2v")
+region = Rect2(0, 432, 325, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3dxm6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu6xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0du0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm0pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fos0i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="Node2D" type="Node2D" unique_id=197038060]
 
 [node name="Label" type="Label" parent="." unique_id=1526387753]
@@ -8,3 +46,16 @@ offset_top = 101.0
 offset_right = 134.0
 offset_bottom = 124.0
 text = "HELLO WOOORLD"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=393776724]
+position = Vector2(126, 239)
+texture = ExtResource("1_glv2v")
+flip_h = true
+hframes = 325
+vframes = 144
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1166104791]
+position = Vector2(559, 321)
+sprite_frames = SubResource("SpriteFrames_3dxm6")
+autoplay = "default"
+frame_progress = 0.8834855
